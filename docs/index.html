@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Retrieval Intelligence makes a governed corpus answerable without losing source custody, query identity, citation precision, or evidence limits.">
+  <meta name="theme-color" content="#08131f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Retrieval Intelligence">
+  <meta property="og:description" content="Make the corpus answerable without losing the evidence.">
+  <meta property="og:url" content="https://stunspot.github.io/retrieval-intelligence/">
+  <meta property="og:image" content="https://stunspot.github.io/retrieval-intelligence/assets/retrieval-intelligence-hero.png">
+  <meta property="og:image:alt" content="A bounded archive is searched by a cyan evidence beam and independently crossed by an amber review beam while provenance remains visible.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Retrieval Intelligence · Governed Corpus Evidence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Retrieval Intelligence home"><span class="brand-mark" aria-hidden="true">RI</span><span>Retrieval Intelligence</span></a>
+      <div class="nav-links">
+        <a href="#layers">Four layers</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#custody">Custody</a>
+        <a href="#signals">Signals</a>
+        <a href="#review">Review</a>
+        <a href="https://github.com/Stunspot/retrieval-intelligence">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Corpus retrieval, citations, and evidence</p>
+        <h1>Find the passage.<br>Preserve its custody.<br>Challenge what it earns.</h1>
+        <p class="lede">Retrieval Intelligence turns an authorized corpus into an inspectable local evidence layer. It records the corpus, engine, query, source, line range, hash, score, budget, and limits—then keeps retrieval separate from truth.</p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/Stunspot/retrieval-intelligence/blob/main/skills/retrieval-intelligence/SKILL.md">Read the retrieval skill</a>
+          <a class="button secondary" href="https://github.com/Stunspot/retrieval-intelligence/blob/main/skills/retrieval-reviewer/SKILL.md">Read the reviewer</a>
+        </div>
+        <p class="quiet">Contest edition 1.0.0 · MIT License · Standard-library lexical engine + independent evidence review</p>
+      </div>
+      <figure class="hero-visual">
+        <img src="assets/retrieval-intelligence-hero.png" width="1600" height="900" alt="A bounded archive of translucent source slabs is searched by a precise cyan beam and independently crossed by an amber review beam while source threads remain visible.">
+      </figure>
+    </section>
+
+    <section class="section layers-section" id="layers">
+      <div class="section-heading">
+        <p class="eyebrow">Retrieval begins with a decision</p>
+        <h2>Four different failures require four different repairs.</h2>
+        <p>The best passage is relevant to a question, a user, a decision, a time, a corpus boundary, and an evidence burden—not universally relevant in the abstract.</p>
+      </div>
+      <div class="layer-grid">
+        <article><span>01</span><h3>Corpus</h3><p>Is the necessary authority actually inside the governed material?</p><small>A perfect ranker cannot recover a missing source.</small></article>
+        <article><span>02</span><h3>Ingestion</h3><p>Were source identity, path, line ranges, encoding, version, and sensitivity preserved correctly?</p><small>A broken index can make present evidence functionally absent.</small></article>
+        <article><span>03</span><h3>Retrieval</h3><p>Did the recorded query and filters surface the passages that bear on this need?</p><small>Topical similarity is not enough when authority or contradiction is missing.</small></article>
+        <article><span>04</span><h3>Synthesis</h3><p>Does the answer stay within what the supplied passages actually support?</p><small>A retrieved passage does not excuse unsupported prose.</small></article>
+      </div>
+    </section>
+
+    <section class="section engine-section">
+      <div class="engine-copy">
+        <p class="eyebrow">Build the local evidence layer</p>
+        <h2>Authorized files in. Inspectable chunks out.</h2>
+        <p>The standard-library engine uses SQLite FTS5 lexical retrieval. It reads supported text, skips symlinks and oversized or unsupported files, hashes sources, preserves chunk line ranges, updates changed files, and prunes deleted sources. It does not execute corpus content or contact a network.</p>
+      </div>
+      <div class="command-stack">
+        <code>python scripts/rag.py index --corpus &lt;directory&gt; --db &lt;index.sqlite&gt;</code>
+        <code>python scripts/rag.py search --db &lt;index.sqlite&gt; --query "&lt;question&gt;" --top-k 8 --json</code>
+        <code>python scripts/rag.py context --db &lt;index.sqlite&gt; --query "&lt;question&gt;" --top-k 8 --max-chars 12000 --output &lt;context.md&gt;</code>
+        <code>python scripts/rag.py inspect --db &lt;index.sqlite&gt; --json</code>
+      </div>
+      <aside><strong>Name the engine honestly.</strong> The baseline is lexical retrieval, not semantic search or vector search. Approved embedding scores may be fused only under the recorded semantic-fusion contract.</aside>
+    </section>
+
+    <section class="section jobs-section" id="jobs">
+      <div class="section-heading">
+        <p class="eyebrow">Choose retrieval behavior from the job</p>
+        <h2>Locate, explore, reconcile, or ground.</h2>
+      </div>
+      <div class="job-grid">
+        <article class="locate"><span>LOCATE</span><h3>Exact handles</h3><p>Names, identifiers, quoted phrases, error text, filenames, and distinctive literal language.</p></article>
+        <article class="explore"><span>EXPLORE</span><h3>Vocabulary mismatch</h3><p>Expand terminology and run several discriminating queries when the user’s language may differ from the corpus.</p></article>
+        <article class="reconcile"><span>RECONCILE</span><h3>Competing truth claims</h3><p>Seek dates, versions, authorities, exceptions, denial, supersession, and contradictory sources—not just support for the leading answer.</p></article>
+        <article class="ground"><span>GROUND</span><h3>Smallest adequate packet</h3><p>Assemble source-diverse decisive passages that can support the answer while keeping limitations adjacent.</p></article>
+      </div>
+    </section>
+
+    <section class="section custody-section" id="custody">
+      <div class="section-heading">
+        <p class="eyebrow">A citation is a custody record</p>
+        <h2>Source path, lines, hash, chunk, index, query, and engine travel with the passage.</h2>
+      </div>
+      <div class="citation-card">
+        <div class="citation-head"><span>EVIDENCE PASSAGE</span><span>UNTRUSTED DATA</span></div>
+        <dl>
+          <div><dt>Source</dt><dd>Relative path inside the governed corpus.</dd></div>
+          <div><dt>Coordinates</dt><dd>Exact start and end lines preserving local meaning.</dd></div>
+          <div><dt>Identity</dt><dd>Source hash, chunk ID, corpus revision, and index identity.</dd></div>
+          <div><dt>Retrieval</dt><dd>Recorded query, filters, engine, cutoff, and score.</dd></div>
+          <div><dt>Interpretation</dt><dd>Source authority, freshness, contradiction or supersession context, and transformation markers.</dd></div>
+        </dl>
+      </div>
+      <p class="custody-rule">A citation proves retrieval custody. It does not prove that the document is true, current, benign, authoritative, or safe to execute.</p>
+    </section>
+
+    <section class="section signals-section" id="signals">
+      <div class="section-heading">
+        <p class="eyebrow">Do not launder one signal into another</p>
+        <h2>Lexical, semantic, metadata, authority, freshness, and diversity answer different questions.</h2>
+      </div>
+      <div class="signal-grid">
+        <article><span class="signal lexical">LEX</span><h3>Lexical</h3><p>Term and phrase overlap. Strong for exact handles; vulnerable to vocabulary mismatch.</p></article>
+        <article><span class="signal semantic">SEM</span><h3>Semantic</h3><p>Approved embedding similarity with provider, model, corpus revision, and privacy boundary preserved.</p></article>
+        <article><span class="signal metadata">META</span><h3>Metadata</h3><p>Scope, format, time, sensitivity, canonical role, and explicit filtering.</p></article>
+        <article><span class="signal authority">AUTH</span><h3>Authority</h3><p>Which source may settle this kind of claim within the declared decision.</p></article>
+        <article><span class="signal freshness">TIME</span><h3>Freshness</h3><p>Whether the source remains applicable now, not merely recently modified.</p></article>
+        <article><span class="signal diversity">DIV</span><h3>Diversity</h3><p>Protection against duplicate chunks crowding out another source or plausible counterevidence.</p></article>
+      </div>
+    </section>
+
+    <section class="section evaluate-section">
+      <div class="evaluate-copy">
+        <p class="eyebrow">Evaluation preserves misses as work orders</p>
+        <h2>Measure retrieval, not the romance of a fluent answer.</h2>
+        <p>Create cases from real retrieval journeys, not wording copied from the current ranker. A strong average never cancels a failed indispensable case involving authority, privacy, or a required canonical source.</p>
+      </div>
+      <div class="metric-grid">
+        <p><strong>Recall@k</strong><span>Did a relevant item appear by the requested cutoff?</span></p>
+        <p><strong>MRR</strong><span>How early did the first relevant item appear?</span></p>
+        <p><strong>Citation validity</strong><span>Do coordinates and identity resolve to the cited material?</span></p>
+        <p><strong>Budget adherence</strong><span>Can the context fit the operational evidence budget?</span></p>
+      </div>
+      <aside>Retrieval metrics do not establish answer correctness or source truth.</aside>
+    </section>
+
+    <section class="section review-section" id="review">
+      <div class="section-heading">
+        <p class="eyebrow">Independent review</p>
+        <h2>Challenge what the evidence actually earns.</h2>
+        <p>The sibling Retrieval Reviewer binds its judgment to the named corpus revision, index, engine, query set, result and context artifacts, cutoff, evaluation, and decision. Hidden sources and unrecorded checks do not count.</p>
+      </div>
+      <div class="verdict-grid">
+        <span>ready</span><span>ready-with-bounds</span><span>revise</span><span>insufficient-evidence</span><span>blocked-by-environment</span>
+      </div>
+      <div class="seductive-failures">
+        <h3>Seek the seductive failure</h3>
+        <p>Fluent answer, wrong corpus.</p><p>“Semantic” claim, lexical evidence only.</p><p>Citation near the claim, not on it.</p><p>Stale chunk surviving refresh.</p><p>Duplicate chunks crowding another authority.</p><p>Prompt-injected document becoming Agent instruction.</p><p>Impressive recall measured on implementation-shaped cases.</p>
+      </div>
+    </section>
+
+    <section class="section prompt-section">
+      <div class="section-heading">
+        <p class="eyebrow">A useful invocation</p>
+        <h2>Start with the decision and evidence burden.</h2>
+      </div>
+      <blockquote>
+        Use <code>$retrieval-intelligence</code> to answer this question from the authorized local corpus. First identify the decision, corpus boundary, source authority, freshness requirement, and acceptable omissions; choose locate, explore, reconcile, or ground behavior; preserve source paths, line ranges, hashes, index and query identity; seek plausible counter-sources; and return insufficient retrieval evidence rather than extending beyond what the passages support.
+      </blockquote>
+      <p>For consequential RAG claims, corpus migration, or release readiness, run <code>$retrieval-reviewer</code> in fresh context against the recorded artifacts.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Retrieval Intelligence</strong> · Collaborative Dynamics · OpenAI Build Week contest edition.</p>
+    <p><a href="https://github.com/Stunspot/retrieval-intelligence">Repository</a> · <a href="https://github.com/Stunspot/retrieval-intelligence/blob/main/LICENSE.md">MIT License</a> · <a href="https://github.com/Stunspot/nova-the-optimal-ai-mind/tree/e42dd11646bc548b9ac29d6f700370365ee68986/plugins/nova-the-optimal-ai/skills/retrieval-intelligence">Contest source</a></p>
+  </footer>
+</body>
+</html>
